@@ -25,7 +25,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/posts",postRouter)
-
+app.get('/', (req, res)=>{
+    res.json({message: 'Hello from the backend'})
+})
 
 
 app.use("*" , (req, res, next) =>{
