@@ -21,7 +21,7 @@ export const addPost = (req, res, next) =>{
 export const getAllPosts = (req, res, next) => {
     connection.execute('SELECT * FROM posts', (err, result) => {
         if(err){
-            return res.status(400).json({message: 'Error getting all posts', err})
+            return res.status(400).json({message: 'Error getting all posts', err: err.message})
         }
         res.json({message:"ddone", result})
     })
